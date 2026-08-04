@@ -1,49 +1,64 @@
 /* Full File Extensions only changes File Explorer presentation. */
 
-/* Hide Obsidian's separate extension badge when the extension is rendered
-   inside the filename label. */
-.full-file-extensions-item .nav-file-tag {
+/* Plugin-owned selectors are intentionally specific so theme rules can be
+   overridden through selector specificity. */
+body .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.full-file-extensions-item
+  .nav-file-tag {
   display: none;
 }
 
-/* Shrink-wrap short labels, but allow long labels to use all available space.
-   Explicit overrides prevent themes from pushing the extension to the edge. */
-.full-file-extensions-split
+/* Shrink-wrap short labels, but allow long labels to use all available space. */
+body .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.full-file-extensions-item.full-file-extensions-split
   .nav-file-title-content.full-file-extensions-label {
-  display: inline-flex !important;
-  align-items: baseline !important;
-  justify-content: flex-start !important;
-  gap: 0 !important;
-  flex: 0 1 auto !important;
-  width: fit-content !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  overflow: hidden !important;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 0;
+  flex: 0 1 auto;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
 }
 
 /* Only the filename stem may shrink and receive the ellipsis. */
-.full-file-extensions-split .full-file-extensions-name {
-  display: block !important;
-  flex: 0 1 auto !important;
-  min-width: 0 !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
+body .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.full-file-extensions-item.full-file-extensions-split
+  .nav-file-title-content.full-file-extensions-label
+  > .full-file-extensions-name {
+  display: block;
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Keep the extension immediately adjacent to the visible filename stem. */
-.full-file-extensions-split .full-file-extensions-extension {
-  display: block !important;
-  flex: 0 0 auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  white-space: nowrap !important;
-  color: inherit !important;
-  opacity: 1 !important;
+body .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.full-file-extensions-item.full-file-extensions-split
+  .nav-file-title-content.full-file-extensions-label
+  > .full-file-extensions-extension {
+  display: block;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  color: inherit;
+  opacity: 1;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
 }
 
-/* Optional muted presentation controlled by the Shade file extension setting. */
-.full-file-extensions-shaded .full-file-extensions-extension {
-  color: var(--text-muted) !important;
-  opacity: 0.30 !important;
+/* Optional shading controlled by the Shade file extension setting. */
+body .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.full-file-extensions-item.full-file-extensions-split.full-file-extensions-shaded
+  .nav-file-title-content.full-file-extensions-label
+  > .full-file-extensions-extension {
+  opacity: 0.5;
 }

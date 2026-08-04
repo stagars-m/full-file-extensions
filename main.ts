@@ -1,7 +1,3 @@
-/*
- * Full File Extensions 1.1.3
- * Generated from main.ts with no external build dependencies.
- */
 "use strict";
 
 const { Plugin, PluginSettingTab, Setting, TFile } = require("obsidian");

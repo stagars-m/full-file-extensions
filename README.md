@@ -15,7 +15,7 @@ archive.tar.gz
 All settings are enabled by default:
 
 - **Show the final extension**: keeps the last extension, such as `.md`, `.pdf`, or `.txt`, visible beside the filename.
-- **Shade file extension**: displays the extension in a lighter muted color. Disable it to use the normal filename color.
+- **Shade file extension**: displays the extension at `0.5` opacity while keeping the same font size and typography as the filename. Disable it to use the normal filename appearance.
 - **Treat filenames without an extension normally**: leaves names such as `README` as normal unsplit labels. When disabled, they use the aligned layout with an empty extension slot.
 - **Treat dotfiles as complete filenames**: keeps `.env` and `.gitignore` together.
 - **Preserve the normal rename field**: removes plugin formatting while Obsidian's inline rename editor is active. The plugin never edits the input.
@@ -39,12 +39,12 @@ It reads the native File Explorer's existing `data-path` attributes and changes 
 ## Install with BRAT
 
 1. Update the GitHub repository `full-file-extensions` with the contents of this package.
-2. Create a new release tagged `1.1.2`.
+2. Create a new release tagged `1.1.3`.
 3. Attach these files individually:
    - `main.js`
    - `manifest.json`
    - `styles.css`
-4. Keep the release tag and manifest version at `1.1.2`.
+4. Keep the release tag and manifest version at `1.1.3`.
 5. Update through BRAT and enable **Full File Extensions** under Community plugins.
 
 ## Manual install
@@ -76,8 +76,13 @@ The File Explorer DOM classes and `data-path` attribute are not part of Obsidian
 Requires Node.js 18 or newer. The project has no npm dependencies.
 
 ```bash
+npm ci
+npm run build
+npm test
 npm run check
 ```
+
+The build-critical files `build.mjs`, `main.ts`, and `test.cjs` are kept at the repository root.
 
 ## License
 
