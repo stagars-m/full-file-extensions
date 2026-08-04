@@ -1,9 +1,9 @@
 {
   "id": "full-file-extensions",
   "name": "Full File Extensions",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minAppVersion": "1.4.0",
-  "description": "Shows complete filenames, including extensions, in the native File Explorer.",
+  "description": "Shows complete filenames with a pinned, always-visible final extension in the native File Explorer.",
   "author": "stagars-m",
   "authorUrl": "https://github.com/stagars-m",
   "isDesktopOnly": false

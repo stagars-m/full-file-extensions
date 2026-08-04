@@ -1,14 +1,11 @@
-# BRAT setup
+# BRAT release setup
 
-BRAT requires a GitHub repository with a GitHub release.
+For version 1.1.0:
 
-1. Create a GitHub repository named `full-file-extensions`.
-2. Upload this repository package and commit it.
-3. Create a release with tag `1.0.0`.
-4. Extract `full-file-extensions-release-assets-v1.0.0.zip` if you downloaded it separately.
-5. Attach `main.js`, `manifest.json`, and `styles.css` individually to the release.
-6. Publish the release.
-7. In Obsidian, run `BRAT: Add a beta plugin for testing` and enter the repository URL.
-8. Enable `Full File Extensions` in Community plugins.
+1. Commit the repository contents to the default branch.
+2. Create a GitHub release tagged `1.1.0`.
+3. Upload `main.js`, `manifest.json`, and `styles.css` as individual release assets.
+4. In Obsidian, run `BRAT: Check for updates to all beta plugins`.
+5. Confirm the installed plugin shows version `1.1.0`.
 
-For a private GitHub repository, BRAT needs a read-only GitHub token configured in BRAT.
+The tag and `manifest.json` version must match.

@@ -1,7 +1,7 @@
 {
   "name": "full-file-extensions",
-  "version": "1.0.0",
-  "description": "Obsidian plugin that shows complete filenames in the native File Explorer.",
+  "version": "1.1.0",
+  "description": "Obsidian plugin that pins complete file extensions in the native File Explorer.",
   "main": "main.js",
   "scripts": {
     "build": "node scripts/build.mjs",

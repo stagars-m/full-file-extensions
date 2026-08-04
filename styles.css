@@ -1,5 +1,39 @@
-/* The full extension is already part of the filename label, so suppress the
-   native extension badge to avoid duplicates such as "file.txt  txt". */
+/* Full File Extensions only changes File Explorer presentation. */
+
+/* Hide Obsidian's separate extension badge when the extension is rendered
+   inside the filename row. */
 .full-file-extensions-item .nav-file-tag {
   display: none;
+}
+
+/* The content area consumes the available row width. */
+.full-file-extensions-split .nav-file-title-content.full-file-extensions-label {
+  display: flex;
+  align-items: baseline;
+  min-width: 0;
+  width: 100%;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+/* Only the filename stem truncates. */
+.full-file-extensions-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* The final extension remains visible at the right edge. */
+.full-file-extensions-extension {
+  flex: 0 0 auto;
+  margin-left: 0.22em;
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+
+/* An empty extension slot should not create visible spacing. */
+.full-file-extensions-extension:empty {
+  margin-left: 0;
 }
