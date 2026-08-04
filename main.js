@@ -1,5 +1,5 @@
 /*
- * Full File Extensions 1.1.0
+ * Full File Extensions 1.1.1
  * Generated from src/main.js with no external build dependencies.
  */
 "use strict";
@@ -348,7 +348,7 @@ class FullFileExtensionsSettingTab extends PluginSettingTab {
 
     new Setting(containerEl)
       .setName("Show the final extension")
-      .setDesc("Pins the last extension, such as .md, .pdf, or .txt, to the right edge of each file row.")
+      .setDesc("Keeps the last extension visible. It stays beside short filenames and follows the truncated stem when space is limited.")
       .addToggle((toggle) =>
         toggle
           .setValue(this.plugin.settings.showFinalExtension)

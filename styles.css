@@ -16,16 +16,19 @@
   overflow: hidden;
 }
 
-/* Only the filename stem truncates. */
+/* The filename uses only the space it needs when short, then shrinks and
+   truncates when the row becomes too narrow. This keeps the extension
+   immediately beside short names while preserving it for long names. */
 .full-file-extensions-name {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* The final extension remains visible at the right edge. */
+/* The final extension stays immediately after the visible filename stem.
+   For a truncated long name, the pair naturally fills the available row. */
 .full-file-extensions-extension {
   flex: 0 0 auto;
   margin-left: 0.22em;

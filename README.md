@@ -1,20 +1,20 @@
 # Full File Extensions
 
-A minimal Obsidian plugin that keeps the final file extension visible at the right edge of each row in the native File Explorer. The filename stem uses the remaining width and shortens with an ellipsis when necessary.
+A minimal Obsidian plugin that keeps the final file extension visible in the native File Explorer. The extension sits directly beside a short filename. When space is limited, only the filename stem shortens with an ellipsis and the extension remains visible.
 
 Examples:
 
 ```text
-A very long research document about paym…   .md
-Quarterly banking statistics                .pdf
-archive.tar                                  .gz
+A very long research document about payments… .md
+Quarterly banking statistics.pdf
+archive.tar.gz
 ```
 
 ## Settings
 
 All settings are enabled by default:
 
-- **Show the final extension**: pins the last extension, such as `.md`, `.pdf`, or `.txt`, to the right edge.
+- **Show the final extension**: keeps the last extension, such as `.md`, `.pdf`, or `.txt`, visible beside the filename.
 - **Treat filenames without an extension normally**: leaves names such as `README` as normal unsplit labels. When disabled, they use the aligned layout with an empty extension slot.
 - **Treat dotfiles as complete filenames**: keeps `.env` and `.gitignore` together.
 - **Preserve the normal rename field**: removes plugin formatting while Obsidian's inline rename editor is active. The plugin never edits the input.
@@ -39,7 +39,7 @@ It reads the native File Explorer's existing `data-path` attributes and changes 
 
 1. Create or update the GitHub repository `full-file-extensions`.
 2. Upload the contents of this repository package.
-3. Create a GitHub release tagged exactly `1.1.0`.
+3. Create a GitHub release tagged exactly `1.1.1`.
 4. Attach these three files individually:
    - `main.js`
    - `manifest.json`
