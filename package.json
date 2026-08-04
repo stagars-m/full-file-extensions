@@ -1,6 +1,6 @@
 {
   "name": "full-file-extensions",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Obsidian plugin that keeps file extensions visible beside filenames in the native File Explorer.",
   "main": "main.js",
   "scripts": {

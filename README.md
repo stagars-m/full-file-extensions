@@ -15,6 +15,7 @@ archive.tar.gz
 All settings are enabled by default:
 
 - **Show the final extension**: keeps the last extension, such as `.md`, `.pdf`, or `.txt`, visible beside the filename.
+- **Shade file extension**: displays the extension in a lighter muted color. Disable it to use the normal filename color.
 - **Treat filenames without an extension normally**: leaves names such as `README` as normal unsplit labels. When disabled, they use the aligned layout with an empty extension slot.
 - **Treat dotfiles as complete filenames**: keeps `.env` and `.gitignore` together.
 - **Preserve the normal rename field**: removes plugin formatting while Obsidian's inline rename editor is active. The plugin never edits the input.
@@ -31,21 +32,20 @@ The plugin is intentionally narrow:
 - No Node.js or Electron APIs
 - No dynamic code execution
 - No runtime dependencies
-- Stores only five local boolean preferences through Obsidian's plugin settings storage
+- Stores only six local boolean preferences through Obsidian's plugin settings storage
 
 It reads the native File Explorer's existing `data-path` attributes and changes display markup only. Disabling the plugin restores Obsidian's native labels.
 
 ## Install with BRAT
 
 1. Update the GitHub repository `full-file-extensions` with the contents of this package.
-2. Open the existing release tagged `1.1.1` and edit it.
-3. Delete the old release assets and attach these corrected files individually:
+2. Create a new release tagged `1.1.2`.
+3. Attach these files individually:
    - `main.js`
    - `manifest.json`
    - `styles.css`
-4. Keep the release tag and manifest version at `1.1.1`.
-5. Because the version number is unchanged, remove the plugin from BRAT and reinstall it, or delete the local plugin folder before adding it again.
-6. Enable **Full File Extensions** under Community plugins.
+4. Keep the release tag and manifest version at `1.1.2`.
+5. Update through BRAT and enable **Full File Extensions** under Community plugins.
 
 ## Manual install
 

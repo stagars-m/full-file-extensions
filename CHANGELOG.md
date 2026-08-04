@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.2
+
+- Add a **Shade file extension** setting, enabled by default.
+- Let users switch extensions between muted gray and the normal filename color.
+- Keep extension positioning, truncation, tooltips, dotfile handling, and rename behavior unchanged.
+
 ## 1.1.1
 
 - Keep the extension directly beside filenames that fit without truncation.

@@ -1,5 +1,5 @@
 /*
- * Full File Extensions 1.1.1
+ * Full File Extensions 1.1.2
  * Generated from src/main.js with no external build dependencies.
  */
 "use strict";
@@ -14,6 +14,7 @@ const SPLIT_CLASS = "full-file-extensions-split";
 const LABEL_CLASS = "full-file-extensions-label";
 const NAME_CLASS = "full-file-extensions-name";
 const EXTENSION_CLASS = "full-file-extensions-extension";
+const SHADE_CLASS = "full-file-extensions-shaded";
 
 const DEFAULT_SETTINGS = Object.freeze({
   showFinalExtension: true,
@@ -21,6 +22,7 @@ const DEFAULT_SETTINGS = Object.freeze({
   treatDotfilesAsComplete: true,
   preserveRenameField: true,
   showTooltip: true,
+  shadeExtension: true,
 });
 
 class FullFileExtensionsPlugin extends Plugin {
@@ -83,6 +85,7 @@ class FullFileExtensionsPlugin extends Plugin {
       treatDotfilesAsComplete: source.treatDotfilesAsComplete !== false,
       preserveRenameField: source.preserveRenameField !== false,
       showTooltip: source.showTooltip !== false,
+      shadeExtension: source.shadeExtension !== false,
     };
   }
 
@@ -224,7 +227,7 @@ class FullFileExtensionsPlugin extends Plugin {
     }
 
     title.classList.add(OWNED_CLASS);
-    title.classList.remove(SPLIT_CLASS);
+    title.classList.remove(SPLIT_CLASS, SHADE_CLASS);
   }
 
   renderSplitLabel(title, content, name, extension) {
@@ -251,6 +254,7 @@ class FullFileExtensionsPlugin extends Plugin {
 
     content.classList.add(LABEL_CLASS);
     title.classList.add(OWNED_CLASS, SPLIT_CLASS);
+    title.classList.toggle(SHADE_CLASS, this.settings.shadeExtension);
   }
 
   applyTooltip(title, filename) {
@@ -302,7 +306,7 @@ class FullFileExtensionsPlugin extends Plugin {
       content.replaceChildren(document.createTextNode(nativeLabel));
     }
 
-    title.classList.remove(OWNED_CLASS, SPLIT_CLASS);
+    title.classList.remove(OWNED_CLASS, SPLIT_CLASS, SHADE_CLASS);
   }
 
   clearPresentation(title, { restoreLabel = true } = {}) {
@@ -311,7 +315,7 @@ class FullFileExtensionsPlugin extends Plugin {
     if (restoreLabel) {
       this.restoreNativeLabel(title);
     } else {
-      title.classList.remove(OWNED_CLASS, SPLIT_CLASS);
+      title.classList.remove(OWNED_CLASS, SPLIT_CLASS, SHADE_CLASS);
       const content = title.querySelector(CONTENT_SELECTOR);
       if (content instanceof HTMLElement) {
         content.classList.remove(LABEL_CLASS);
@@ -353,6 +357,15 @@ class FullFileExtensionsSettingTab extends PluginSettingTab {
         toggle
           .setValue(this.plugin.settings.showFinalExtension)
           .onChange((value) => this.plugin.updateSetting("showFinalExtension", value)),
+      );
+
+    new Setting(containerEl)
+      .setName("Shade file extension")
+      .setDesc("Shows the extension in a lighter muted color. Turn this off to use the normal filename color.")
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.shadeExtension)
+          .onChange((value) => this.plugin.updateSetting("shadeExtension", value)),
       );
 
     new Setting(containerEl)

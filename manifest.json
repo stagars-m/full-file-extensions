@@ -1,7 +1,7 @@
 {
   "id": "full-file-extensions",
   "name": "Full File Extensions",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "minAppVersion": "1.4.0",
   "description": "Shows complete filenames with an adjacent, always-visible final extension in the native File Explorer.",
   "author": "stagars-m",
