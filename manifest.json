@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "minAppVersion": "1.4.0",
   "description": "Shows complete filenames, including extensions, in the native File Explorer.",
-  "author": "TrendScout",
+  "author": "stagars-m",
+  "authorUrl": "https://github.com/stagars-m",
   "isDesktopOnly": false
 }
