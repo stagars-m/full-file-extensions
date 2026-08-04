@@ -1,4 +1,3 @@
-// Generated from main.ts by build.mjs. Do not edit main.js directly.
 "use strict";
 
 const { Plugin, PluginSettingTab, Setting } = require("obsidian");

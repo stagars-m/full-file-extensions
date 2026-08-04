@@ -1,19 +1,24 @@
 {
-  "name": "full-file-extensions",
-  "version": "1.1.2",
-  "description": "Obsidian plugin that keeps file extensions visible beside filenames in the native File Explorer.",
+  "name": "folder-info",
+  "version": "1.0.4",
+  "description": "Obsidian plugin that shows separate file and folder counts in the native File Explorer.",
   "main": "main.js",
+  "type": "commonjs",
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "test": "node --test tests/*.test.cjs",
-    "check": "npm run test && npm run build && node --check main.js"
+    "build": "node build.mjs",
+    "test": "node build.mjs && node --test test.cjs",
+    "check": "npm run test && node --check main.js && node verify-version.mjs"
   },
   "keywords": [
     "obsidian",
     "obsidian-plugin",
     "file-explorer",
-    "file-extensions"
+    "folders",
+    "counts"
   ],
   "license": "MIT",
-  "private": true
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
 }
