@@ -1,0 +1,5 @@
+/* The full extension is already part of the filename label, so suppress the
+   native extension badge to avoid duplicates such as "file.txt  txt". */
+.full-file-extensions-item .nav-file-tag {
+  display: none;
+}
