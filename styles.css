@@ -45,5 +45,5 @@
 /* Optional muted presentation controlled by the Shade file extension setting. */
 .full-file-extensions-shaded .full-file-extensions-extension {
   color: var(--text-muted) !important;
-  opacity: 0.82 !important;
+  opacity: 0.30 !important;
 }
