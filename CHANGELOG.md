@@ -5,6 +5,9 @@
 - Keep the extension directly beside filenames that fit without truncation.
 - Preserve the extension immediately after the ellipsized stem for long filenames.
 - Remove the unnecessary gap that appeared between short filenames and extensions.
+- Override theme-level spacing that could push the extension to the right edge.
+- Shrink-wrap short labels while allowing long labels to use the available width.
+- Add regression checks for label width, spacing, and extension margin overrides.
 
 ## 1.1.0
 
